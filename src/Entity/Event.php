@@ -1,7 +1,8 @@
 <?php
 /**
- * @2020 Creative Coffeur Sükrü Demir, Burgsteinfurt
- * http://www.creative-coiffeur.de/
+ * CCCal
+ * @2020 Ali Dindin, Burgsteinfurt
+ * http://www.alidndn.com/
  */
 
 namespace App\Entity;
@@ -49,6 +50,11 @@ class Event implements \JsonSerializable
      * @ORM\Column(type="string", length=255)
      */
     private $gender;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
 
     /**
      * @return int
@@ -167,6 +173,24 @@ class Event implements \JsonSerializable
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $gender
+     * @return Event
+     */
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+        return $this;
+    }
+
 
     /**
      * Specify data which should be serialized to JSON
@@ -184,7 +208,8 @@ class Event implements \JsonSerializable
             'title' => $this->title,
             'content' => $this->content,
             'contentFull' => $this->contentFull,
-            'gender' => $this->gender
+            'gender' => $this->gender,
+            'email' => $this->email
         ];
     }
 }

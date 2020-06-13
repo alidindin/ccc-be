@@ -1,7 +1,8 @@
 <?php
 /**
- * @2020 Creative Coffeur Sükrü Demir, Burgsteinfurt
- * http://www.creative-coiffeur.de/
+ * CCCal
+ * @2020 Ali Dindin, Burgsteinfurt
+ * http://www.alidndn.com/
  */
 
 namespace App\Repository;
@@ -47,6 +48,7 @@ class EventRepository extends ServiceEntityRepository
      * @param $content
      * @param $contentFull
      * @param $gender
+     * @param $email
      */
     public function saveEvent(
         string $start,
@@ -54,7 +56,8 @@ class EventRepository extends ServiceEntityRepository
         string $title,
         string $content,
         string $contentFull,
-        string $gender
+        string $gender,
+        string $email
     ) {
         $newEvent = new Event();
 
@@ -64,7 +67,8 @@ class EventRepository extends ServiceEntityRepository
             ->setTitle($title)
             ->setContent($content)
             ->setContentFull($contentFull)
-            ->setGender($gender);
+            ->setGender($gender)
+            ->setEmail($email);
 
         $this->manager->persist($newEvent);
         $this->manager->flush();

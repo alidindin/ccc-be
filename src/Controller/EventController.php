@@ -1,7 +1,8 @@
 <?php
 /**
- * @2020 Creative Coffeur Sükrü Demir, Burgsteinfurt
- * http://www.creative-coiffeur.de/
+ * CCCal
+ * @2020 Ali Dindin, Burgsteinfurt
+ * http://www.alidndn.com/
  */
 
 namespace App\Controller;
@@ -77,13 +78,15 @@ class EventController
         $content = $data['content'];
         $contentFull = $data['contentFull'];
         $gender = $data['gender'];
+        $email = $data['email'];
 
         if (empty($start) ||
             empty($end) ||
             empty($title) ||
             empty($content) ||
             empty($contentFull) ||
-            empty($gender)) {
+            empty($gender) ||
+            empty($email)) {
             throw new NotFoundHttpException('Expecting mandatory parameters!');
         }
 
@@ -93,7 +96,8 @@ class EventController
             $title,
             $content,
             $contentFull,
-            $gender);
+            $gender,
+            $email);
 
         return new JsonResponse(['status' => 'Event created!'], Response::HTTP_CREATED);
     }
@@ -117,6 +121,7 @@ class EventController
         empty($data['content']) ? true : $user->setContent($data['content']);
         empty($data['contentFull']) ? true : $user->setContentFull($data['contentFull']);
         empty($data['gender']) ? true : $user->setGender($data['gender']);
+        empty($data['email']) ? true : $user->setGender($data['email']);
 
         $updateEvent = $this->eventRepository->updateEvent($user);
 

@@ -1,7 +1,8 @@
 <?php
 /**
- * @2020 Creative Coffeur Sükrü Demir, Burgsteinfurt
- * http://www.creative-coiffeur.de/
+ * CCCal
+ * @2020 Ali Dindin, Burgsteinfurt
+ * http://www.alidndn.com/
  */
 
 namespace App\Controller;

@@ -9,6 +9,7 @@ return [
     'add_event' => [[], ['_controller' => 'App\\Controller\\EventController::addEvent'], [], [['text', '/events']], [], []],
     'update_event' => [['id'], ['_controller' => 'App\\Controller\\EventController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/events']], [], []],
     'delete_event' => [['id'], ['_controller' => 'App\\Controller\\EventController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/events']], [], []],
+    'send_email' => [[], ['_controller' => 'App\\Controller\\MailController::sendEmail'], [], [['text', '/email']], [], []],
     'get_one_user' => [['id'], ['_controller' => 'App\\Controller\\UserController::getUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/users']], [], []],
     'get_all_users' => [[], ['_controller' => 'App\\Controller\\UserController::getAllUsers'], [], [['text', '/users']], [], []],
     'add_user' => [[], ['_controller' => 'App\\Controller\\UserController::addUser'], [], [['text', '/users']], [], []],
