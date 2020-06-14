@@ -12,7 +12,7 @@ return [
             [['_route' => 'get_all_events', '_controller' => 'App\\Controller\\EventController::getAllEvents'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'add_event', '_controller' => 'App\\Controller\\EventController::addEvent'], null, ['POST' => 0], null, false, false, null],
         ],
-        '/email' => [[['_route' => 'send_email', '_controller' => 'App\\Controller\\MailController::sendEmail'], null, ['GET' => 0], null, false, false, null]],
+        '/email' => [[['_route' => 'send_email', '_controller' => 'App\\Controller\\MailController::sendEmail'], null, ['POST' => 0], null, false, false, null]],
         '/users' => [
             [['_route' => 'get_all_users', '_controller' => 'App\\Controller\\UserController::getAllUsers'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'add_user', '_controller' => 'App\\Controller\\UserController::addUser'], null, ['POST' => 0], null, false, false, null],
